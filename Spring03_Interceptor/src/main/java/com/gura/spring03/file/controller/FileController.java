@@ -10,7 +10,13 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.gura.spring03.file.dto.FileDto;
-
+/*
+ * 	[ spring mvc 파일 업로드 처리 ]
+ * 	
+ * 	1. pom.xml 에 commons-io, commons-fileupload 가 dependency 에 명시되어 있어야 한다.
+ * 	2. servlet-context.xml 에 MultipartResolver bean 설정이 있어야한다.
+ * 	3. MultipartFile 객체를 컨트롤러에서 받아서 사용하면 된다.
+ */
 @Controller
 public class FileController {
 	
