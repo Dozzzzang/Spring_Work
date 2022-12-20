@@ -65,4 +65,11 @@ public class UsersController {
 		session.removeAttribute("id");
 		return "users/logout";
 	}
+	//개인 정보 보기 요청 처리
+	@RequestMapping("/users/info")
+	public ModelAndView info(HttpSession session, ModelAndView mView) {
+		service.getInfo(session, mView);
+		mView.setViewName("users/info");
+		return mView;
+	}
 }
