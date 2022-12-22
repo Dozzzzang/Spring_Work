@@ -18,6 +18,10 @@ public class FileDto {
     private int endRowNum;
     //파일 업로드 처리를 하기 위한 필드
 	private MultipartFile myFile;
+	
+	//디폴트 생성자
+	public FileDto() {}
+	
 	public FileDto(int num, String writer, String title, String orgFileName, String saveFileName, long fileSize,
 			String regdate, int startRowNum, int endRowNum, MultipartFile myFile) {
 		super();
