@@ -33,4 +33,5 @@
 		SELECT NVL(MAX(ROWNUM), 0)
 		FROM board_file
 	</select>
+	
 </mapper>
