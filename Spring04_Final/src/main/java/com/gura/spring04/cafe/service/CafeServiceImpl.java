@@ -104,14 +104,19 @@ public class CafeServiceImpl implements CafeService{
 
 	@Override
 	public void getDetail(HttpServletRequest request) {
-		// TODO Auto-generated method stub
-		
+		//자세히 보여줄 글번호를 읽어온다.
+		int num=Integer.parseInt(request.getParameter("num"));
+		//조회수 올리기
+		cafeDao.addViewCount(num);
+		//글하나의 정보를 얻어온다.
+		CafeDto dto=cafeDao.getData(num);
+		//request scope 에 글 하나의 정보 담기
+		request.setAttribute("dto", dto);
 	}
 
 	@Override
 	public void saveContent(CafeDto dto) {
-		// TODO Auto-generated method stub
-		
+		cafeDao.insert(dto);
 	}
 
 	@Override

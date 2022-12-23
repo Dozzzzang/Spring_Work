@@ -29,7 +29,7 @@
 		         		<td>${tmp.num }</td>
 		         		<td>${tmp.writer }</td>
 		         		<td>
-		         			<a href="detail.jsp?num=${tmp.num }">${tmp.title }</a>
+		         			<a href="detail?num=${tmp.num }">${tmp.title }</a>
 		         		</td>
 		         		<td>${tmp.viewCount }</td>
 		         		<td>${tmp.regdate }</td>
