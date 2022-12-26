@@ -2,7 +2,7 @@ package com.example.demo.util;
 
 import org.springframework.stereotype.Component;
 
-// conponent scan 이 일어났을때 bean 이 될수 있도록 어노테이션 붙여넣기
+// component scan 이 일어났을때 bean 이 될수 있도록 어노테이션 붙여넣기
 @Component
 public class WritingUtil {
 	//생성자
