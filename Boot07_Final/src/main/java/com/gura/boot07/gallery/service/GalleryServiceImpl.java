@@ -8,6 +8,7 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
@@ -21,6 +22,9 @@ import com.gura.boot07.gallery.dto.GalleryDto;
 public class GalleryServiceImpl implements GalleryService {
 	@Autowired
 	private GalleryDao dao;
+	
+	@Value("${file.location}")
+	private String fileLocation;
 	
 	//갤러리 이미지 list
 	public void getList(HttpServletRequest request) {
@@ -84,8 +88,8 @@ public class GalleryServiceImpl implements GalleryService {
 		//파일 크기 -> 다운로드가 없으므로, 여기서는 필요 없다.
 		long fileSize = image.getSize();
 		
-		// webapp/upload 폴더 까지의 실제 경로(서버의 파일 시스템 상에서의 경로)
-		String realPath = "C:\\data";
+		// 파일을 저장할 서버에서의 실제 경로
+		String realPath = fileLocation;
 		//db 에 저장할 저장할 파일의 상세 경로
 		String filePath = realPath + File.separator;
 		//디렉토리를 만들 파일 객체 생성
@@ -112,7 +116,7 @@ public class GalleryServiceImpl implements GalleryService {
 		String id = (String)request.getSession().getAttribute("id");
 		dto.setWriter(id);
 		//gallery 는 사진 다운 기능이 없다. -> orgFileName, saveFileName, fileSize 저장할 필요X
-		//파일명 만 저장해주면 됨
+		//저장된 파일명만 저장한다
 		dto.setImagePath(saveFileName);
 		
 		//GalleryDao 를 이용해서 DB 에 저장하기
