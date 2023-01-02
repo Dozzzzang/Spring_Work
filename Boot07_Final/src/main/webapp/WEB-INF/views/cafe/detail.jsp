@@ -273,7 +273,8 @@
 		//댓글의 현재 페이지 번호를 관리할 변수를 만들고 초기값 1 대입하기
 		let currentPage=1;
 		//마지막 페이지는 totalPageCount 이다.  
-		let lastPage=${totalPageCount};
+		<%-- 댓글의 갯수가 0 일때 로딩 오류를 방지 하기 위해 --%>
+		let lastPage=${totalPageCount eq 0 ? 1 : totalPageCount};
 		
 		//추가로 댓글을 요청하고 그 작업이 끝났는지 여부를 관리할 변수 
 		let isLoading=false; //현재 로딩중인지 여부 
