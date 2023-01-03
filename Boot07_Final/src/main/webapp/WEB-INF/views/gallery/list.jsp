@@ -46,14 +46,14 @@
 <div class="container">
    	<a href="${pageContext.request.contextPath}/gallery/upload_form">사진 업로드 하러 가기</a><br/>
    	<a href="${pageContext.request.contextPath}/gallery/ajax_form">사진 업로드 하러 가기2</a>
-   	<h1>겔러리 목록 입니다.</h1>
+   	<h1>갤러리 목록 입니다.</h1>
    	<div class="row">
 		<c:forEach var="tmp" items="${list }">
 			<div class="col-4 col-md-3 col-lg-2">
          		<div class="card mb-3">
             		<a href="${pageContext.request.contextPath}/gallery/detail?num=${tmp.num}">
 	               		<div class="img-wrapper">
-	                  		<img class="card-img-top" src="${pageContext.request.contextPath }/users/profile/${tmp.imagePath}" />
+	                  		<img class="card-img-top" src="${pageContext.request.contextPath }/gallery/images/${tmp.imagePath}" />
 	               		</div>
             		</a>
             		<div class="card-body">
