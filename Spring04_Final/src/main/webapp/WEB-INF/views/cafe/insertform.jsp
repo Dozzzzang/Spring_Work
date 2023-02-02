@@ -18,7 +18,7 @@
       <h3>새글 작성 폼입니다.</h3>
       <form action="insert" method="post">
          <div>
-            <label for="title">제목</label>
+            <label for="title">제목</label><br />
             <input type="text" name="title" id="title"/>
          </div>
          <div>
